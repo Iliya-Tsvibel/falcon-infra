@@ -6,3 +6,5 @@ resources:
   - namespaces/logging.yaml
   - namespaces/apps.yaml
   - namespaces/opensearch.yaml
+  - argo-apps/monitoring-kube-prometheus-stack.yaml
+  - argo-apps/logging-loki-stack.yaml

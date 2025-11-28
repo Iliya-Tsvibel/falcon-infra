@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: falcon-monitoring
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://prometheus-community.github.io/helm-charts
+    chart: kube-prometheus-stack
+    targetRevision: 65.8.0
+    helm:
+      releaseName: falcon-monitoring
+      values: |
+        fullnameOverride: falcon-monitoring
+        grafana:
+          enabled: true
+          service:
+            type: ClusterIP
+        prometheus:
+          prometheusSpec:
+            retention: 7d
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
