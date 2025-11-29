@@ -12,7 +12,7 @@ spec:
     helm:
       releaseName: falcon-opensearch-dashboards
       values: |
-        opensearchHosts: "http://falcon-opensearch-cluster-master.opensearch:9200"
+        opensearchHosts: "http://opensearch-cluster-master.opensearch:9200"
         resources:
           requests:
             cpu: "100m"
