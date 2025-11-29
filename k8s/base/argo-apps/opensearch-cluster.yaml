@@ -16,6 +16,9 @@ spec:
         minimumMasterNodes: 1
         persistence:
           enabled: false
+        extraEnvs:
+          - name: OPENSEARCH_INITIAL_ADMIN_PASSWORD
+            value: "Admin123_Strong!!"
         resources:
           requests:
             cpu: "200m"
