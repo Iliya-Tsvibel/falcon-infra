@@ -13,6 +13,8 @@ spec:
       releaseName: falcon-opensearch-dashboards
       values: |
         opensearchHosts: "http://opensearch-cluster-master.opensearch:9200"
+        opensearchDashboardsUsername: "admin"
+        opensearchDashboardsPassword: "Admin123_Strong!!"
         resources:
           requests:
             cpu: "100m"
